@@ -1,0 +1,28 @@
+body{
+    text-align: center;
+}
+div{
+    width: 100%;
+}
+h3{
+    color: black;
+}
+.input{
+    width: 50%;
+    margin-left: 275px;
+}
+#button{
+    margin: 1.5rem;
+}
+canvas{
+    margin-top:30px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px grey;
+    animation-name: animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes animation{
+    from{box-shadow: 10px 10px 10px palevioletred;}
+    to{box-shadow: 10px 10px 10px violet;}
+}
