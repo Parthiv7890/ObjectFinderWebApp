@@ -1,6 +1,7 @@
 let status = ""
 let input = ""
 objects = []
+const synth = window.speechSynthesis
 function setup(){
     canvas = createCanvas(380,380)
     canvas.position(window.width/2 + 275,window/100)
@@ -21,6 +22,15 @@ function draw(){
             noFill()
             stroke(255,0,0)
             rect(objects[i].x,objects[i].y,objects[i].width,objects[i].height)
+            if(input == objects[i].label){
+                document.getElementById("checkingIfFound").innerHTML = "Object Name : "+input
+                video.stop()
+                objDetector.detect(gotResults)
+                const utterThis = new SpeechSynthesisUtterance(input+" found");
+                synth.speak(utterThis)
+            }else{
+                document.getElementById("checkingIfFound").innerHTML = "Object not found"
+            }
         }
     }
     
